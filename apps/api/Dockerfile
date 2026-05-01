@@ -29,6 +29,6 @@ WORKDIR /app/apps/api
 
 ENV NODE_ENV=production
 
-RUN chmod +x /app/apps/api/entrypoint.sh
+RUN sed -i 's/\r$//' /app/apps/api/entrypoint.sh && chmod +x /app/apps/api/entrypoint.sh
 
-CMD ["/app/apps/api/entrypoint.sh"]
+CMD ["sh", "/app/apps/api/entrypoint.sh"]
