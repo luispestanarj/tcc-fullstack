@@ -29,6 +29,4 @@ WORKDIR /app/apps/api
 
 ENV NODE_ENV=production
 
-RUN sed -i 's/\r$//' /app/apps/api/entrypoint.sh && chmod +x /app/apps/api/entrypoint.sh
-
-CMD ["sh", "/app/apps/api/entrypoint.sh"]
+CMD ["sh", "-c", "npx prisma migrate deploy && npx tsx prisma/seed.ts && exec node dist/server.js"]
