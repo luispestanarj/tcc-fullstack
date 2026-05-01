@@ -1,0 +1,15 @@
+.git
+.gitignore
+node_modules
+**/node_modules
+dist
+**/dist
+.env
+**/.env
+*.log
+coverage
+.nyc_output
+*.docx
+*.pdf
+SESSAO_RESUMO.md
+docs/
